@@ -30,17 +30,9 @@ int main()
             exit(EXIT_FAILURE);
         }
         ret = debVS.CmpVersion(ver1, ver2);
-        if (ret == 0) {
-            fputc('=', stdout);
-        } else if (ret > 0) {
-            fputc('>', stdout);
-        } else {
-            fputc('<', stdout);
+        if (ret != 0) {
+            fputs(orig2, stdout);
         }
-        /*
-        fputc(' ', stdout);
-        fputs(orig2, stdout);
-        */
         //fputs(orig2, stdout);
         free(orig1);
         free(orig2);
